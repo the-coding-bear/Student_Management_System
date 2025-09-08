@@ -28,5 +28,8 @@ public class StudentService {
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
     }
+    public Student getStudentByRollNo(int rollNo){
+        return studentRepository.findByRollNo(rollNo);
+    }
 }
 

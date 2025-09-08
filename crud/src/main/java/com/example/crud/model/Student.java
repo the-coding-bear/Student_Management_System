@@ -9,6 +9,8 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false,unique = true)
+    private int rollNo;
     @Column(nullable = false)
     @NotBlank(message="name is mandatory")
     private String name;
@@ -17,7 +19,8 @@ public class Student {
     // Constructors
     public Student() {}
 
-    public Student(String name, String email) {
+    public Student(int rollNo,String name, String email) {
+        this.rollNo=rollNo;
         this.name = name;
         this.email = email;
     }
@@ -25,6 +28,14 @@ public class Student {
     // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

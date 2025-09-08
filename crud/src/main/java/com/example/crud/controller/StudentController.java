@@ -44,5 +44,10 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
+    @GetMapping("/{rollNo}")
+    public Student getStudentByRollNo(@PathVariable int rollNo){
+        return studentService.getStudentByRollNo(rollNo);
+    }
+
 }
 
